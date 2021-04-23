@@ -18,7 +18,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          ...
       - run: docker build -t ghcr.io/polawich/bookinfo-ratings:dev .
       - run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - run: docker push ghcr.io/polawich/bookinfo-ratings:dev
